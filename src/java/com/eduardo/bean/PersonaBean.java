@@ -87,4 +87,16 @@ public class PersonaBean {
             throw e;
         }
     }
+    
+    public void eliminar(Persona per) throws Exception{
+        PersonaDAO dao;
+        
+        try{
+            dao = new PersonaDAO();
+            dao.eliminar(per);
+            this.listar();
+        }catch(Exception e){
+            throw e;
+        }
+    }
 }

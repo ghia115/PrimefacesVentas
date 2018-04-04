@@ -93,4 +93,17 @@ public class PersonaDAO extends DAO {
             this.Cerrar();
         }
     }
+    
+    public void eliminar(Persona p) throws Exception {
+        try {
+            this.Conectar();
+            PreparedStatement st = this.getCn().prepareStatement("DELETE FROM persona WHERE codigo = ?");
+            st.setInt(1, p.getCodigo());
+            st.executeUpdate();
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            this.Cerrar();
+        }
+    }
 }

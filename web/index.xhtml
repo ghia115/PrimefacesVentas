@@ -35,6 +35,9 @@
                 <p:column headerText="Modificar" >
                     <p:commandLink value="Modificar" actionListener="#{personaBean.leerID(persona)}" oncomplete="PF('widgDatos').show();" update=":digDatos"/>
                 </p:column>
+                <p:column headerText="Eliminar" >
+                    <p:commandLink value="Eliminar" actionListener="#{personaBean.eliminar(persona)}" update="data"/>
+                </p:column>
             </p:dataTable>
         </h:form>
         <p:dialog header="Datos" widgetVar="widgDatos" id="digDatos">
